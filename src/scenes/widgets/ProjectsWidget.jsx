@@ -1,9 +1,12 @@
 import { 
     Box,
-    Typography 
+    Typography,
+    useMediaQuery
 } from "@mui/material";
+import Project from "components/Project";
 
 const ProjectsWidget = () => {
+    const isNonMobileScreens = useMediaQuery('(min-width: 800px)');
 
     return(
         <Box id='Projects' sx={{
@@ -40,9 +43,23 @@ const ProjectsWidget = () => {
             }}>Projects</Typography>
             </Box>
             <Box sx={{
-                display: 'grid'
+                display: 'grid',
+                gridTemplateColumns: isNonMobileScreens ? '50% 50%' : '100%'
             }}>
-                
+                <Project app='Messenger' name='Messenger App' theme='#8625be' tint='#9e51cb'
+                    caption1=''
+                    caption2=''
+                    caption3=''
+                    caption4=''
+                    caption5=''
+                />
+                <Project app='Social' name='Social Media App' theme='#5dbe25' tint='#7dcb51'
+                    caption1=''
+                    caption2=''
+                    caption3=''
+                    caption4=''
+                    caption5=''
+                />
             </Box>
             
           </Box>

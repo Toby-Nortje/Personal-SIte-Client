@@ -1,6 +1,7 @@
 import { 
     Box,
-    Typography 
+    Typography,
+    useMediaQuery
 } from "@mui/material";
 import Skill from "components/Skill";
 import { 
@@ -14,6 +15,7 @@ import { faDatabase, faB } from "@fortawesome/free-solid-svg-icons";
 
 
 const SkillsWidget = () => {
+    const isNonMobileScreens = useMediaQuery('(min-width: 800px)');
 
     const skills = [{
         icon: 'Html',
@@ -79,7 +81,7 @@ const SkillsWidget = () => {
 
             <Box gap='1rem' sx={{
                 display: 'grid',
-                gridTemplateColumns: '33% 33% 33%',
+                gridTemplateColumns: isNonMobileScreens ? '33% 33% 33%' : 'auto auto',
                 p: '1rem',
                 mt: '1rem'
             }}>

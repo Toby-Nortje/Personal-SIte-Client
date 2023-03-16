@@ -1,7 +1,8 @@
 import { 
     Box,
     Typography,
-    CssBaseline
+    CssBaseline,
+    useMediaQuery
 } from "@mui/material";
 import Media from "components/Media";
 import Photo from "components/Photo";
@@ -14,10 +15,11 @@ import ProjectsWidget from "scenes/widgets/ProjectsWidget";
 import SkillsWidget from "scenes/widgets/SkillsWidget";
 
 const HomePage = () => {
-
+    const isNonMobileScreens = useMediaQuery('(min-width: 800px)');
     
     return (
         <Box sx={{ display: 'flex', height: '100vh',}}>
+          {isNonMobileScreens ? (
             <Box sx={{ 
             flexBasis: '15%',
             height: '100%',
@@ -31,7 +33,9 @@ const HomePage = () => {
             <SideBar />
             <Media />
             </Box>
-            <Box sx={{ flexBasis: '85%', maxWidth: '85%', overflowX: 'hidden', color: 'white', position: 'relative',
+          ) : undefined}
+            
+            <Box sx={{ flexBasis: isNonMobileScreens ? '85%' : undefined,  overflowX: 'hidden', color: 'white', position: 'relative',
             }}>
                 <Box sx={{
                     background: 'black', 

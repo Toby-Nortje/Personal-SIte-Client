@@ -1,7 +1,7 @@
 import { 
     Box 
 } from "@mui/material";
-import MyImage from 'images/default-user-image.jpg';
+import MyImage from 'images/profile.jpg';
 
 const Photo = () => {
 

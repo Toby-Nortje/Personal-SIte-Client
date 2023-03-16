@@ -4,3 +4,20 @@ body {
     background-size:cover;
     background-repeat: no-repeat;
 }
+
+.underlined::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 50%;
+    background: white;
+    transition: .5s
+}
+
+.underlined:hover::after {
+    width: 80%
+}
