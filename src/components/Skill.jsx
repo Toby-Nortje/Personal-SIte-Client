@@ -20,7 +20,8 @@ const Skill = ({icon, name, score}) => {
                     height: '4rem',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderRadius: '0.5rem'
+                    borderRadius: '0.5rem',
+                    
                 }}>
                 {icon}
                 </Box>
@@ -35,7 +36,7 @@ const Skill = ({icon, name, score}) => {
                         position: 'relative'
                     }}>
                         <Box sx={{
-                            backgroundColor: 'lightblue',
+                            backgroundColor: '#9e6abd',
                             zIndex: '10',
                             position: 'absolute',
                             top: 0,

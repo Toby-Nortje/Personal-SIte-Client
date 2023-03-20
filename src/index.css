@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 body {
     
     background-image: url(./images/background.jpg);
     background-size:cover;
     background-repeat: no-repeat;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif !important;
 }
 
 .underlined::after {
@@ -21,3 +28,29 @@ body {
 .underlined:hover::after {
     width: 80%
 }
+
+.btn {
+    background: #d03bd8;
+    background-image: -webkit-linear-gradient(top, #d03bd8, #7d2382);
+    background-image: -moz-linear-gradient(top, #d03bd8, #7d2382);
+    background-image: -ms-linear-gradient(top, #d03bd8, #7d2382);
+    background-image: -o-linear-gradient(top, #d03bd8, #7d2382);
+    background-image: linear-gradient(to bottom, #d03bd8, #7d2382);
+    -webkit-border-radius: 11;
+    -moz-border-radius: 11;
+    border-radius: 11px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #e389e8;
+    background-image: -webkit-linear-gradient(top, #e389e8, #d03bd8);
+    background-image: -moz-linear-gradient(top, #e389e8, #d03bd8);
+    background-image: -ms-linear-gradient(top, #e389e8, #d03bd8);
+    background-image: -o-linear-gradient(top, #e389e8, #d03bd8);
+    background-image: linear-gradient(to bottom, #e389e8, #d03bd8);
+    text-decoration: none;
+  }

@@ -12,10 +12,11 @@ import ContactWidget from "scenes/widgets/ContactWidget";
 import FooterWidget from "scenes/widgets/FooterWidget";
 import HomeWidget from "scenes/widgets/HomeWidget";
 import ProjectsWidget from "scenes/widgets/ProjectsWidget";
+import ResumeWidget from "scenes/widgets/ResumeWidget";
 import SkillsWidget from "scenes/widgets/SkillsWidget";
 
 const HomePage = () => {
-    const isNonMobileScreens = useMediaQuery('(min-width: 800px)');
+    const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     
     return (
         <Box sx={{ display: 'flex', height: '100vh',}}>
@@ -52,6 +53,7 @@ const HomePage = () => {
                 <HomeWidget/>
                 <AboutWidget />
                 <SkillsWidget />
+                <ResumeWidget />
                 <ProjectsWidget />
                 <ContactWidget />
                 <FooterWidget />

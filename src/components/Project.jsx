@@ -2,14 +2,16 @@ import {
     Box,
     Typography,
     Backdrop,
-    ClickAwayListener
+    ClickAwayListener,
+    useMediaQuery
 } from "@mui/material";
 import { CCarousel, CCarouselItem, CImage, CCarouselCaption } from '@coreui/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
+import CloseIcon from '@mui/icons-material/Close';
 
 
-const Project = ({app, name, theme, tint, caption1, caption2, caption3, caption4, caption5}) => {
+const Project = ({app, name, theme, tint, caption1, caption2, caption3, caption4, caption5, projectInfo, client, tech, date, url, git}) => {
     const [open, setOpen] = useState(false);
     const handleClose = () => {
       setOpen(false);
@@ -17,6 +19,9 @@ const Project = ({app, name, theme, tint, caption1, caption2, caption3, caption4
     const handleToggle = () => {
       setOpen(!open);
     };
+
+
+    const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
 
     return(
         <Box p='2rem' display='flex' justifyContent='center'>
@@ -64,10 +69,20 @@ const Project = ({app, name, theme, tint, caption1, caption2, caption3, caption4
                     borderWidth: '0.5rem',
                     borderColor: 'white',
                     borderStyle: 'solid',
-                    p: '2rem'
+                    p: '2rem',
+                    position: 'relative'
                 }}
                 
                 >
+                    <Box onClick={handleClose} sx={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        '&:hover': {
+                            cursor: 'pointer',
+                            color: '#484747'
+                        }
+                    }}><CloseIcon /></Box>
                     <Box sx={{
                         flexBasis: '50%',
                         p: '2rem'
@@ -110,42 +125,42 @@ const Project = ({app, name, theme, tint, caption1, caption2, caption3, caption4
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'flex-start',
-                        p: '2rem',
+                        p: '1.5rem',
                         height: '80vh'
                     }}>
                         <Typography variant='h5' 
                         sx={{ 
                             textAlign: 'center',
                             textDecoration: 'underline',
-                            mb: '2rem'
+                            mb: '1rem'
                         }}
                         >{name}</Typography>
                         <Box mb='1rem'>
                             <Typography variant='h6' >Project Info:</Typography>
-                            <Typography variant='p' >Test</Typography>
+                            <Typography variant='p' >{projectInfo}</Typography>
                         </Box>
                         <Box>
                             <Typography variant='h6'>Project Details:</Typography>
 
                         <Box display='flex' flexDirection='row' p='0.5rem 0'>
                             <Typography flexBasis='30%' variant='p' fontWeight='bold'>Client:</Typography>
-                            <Typography flexBasis='70%' variant='p'>Test</Typography>
+                            <Typography flexBasis='70%' variant='p'>{client}</Typography>
                         </Box>
                         <Box display='flex' flexDirection='row' p='0.5rem 0'>
                             <Typography flexBasis='30%' variant='p' fontWeight='bold'>Technologies:</Typography>
-                            <Typography flexBasis='70%' variant='p'>Test</Typography>
+                            <Typography flexBasis='70%' variant='p'>{tech}</Typography>
                         </Box>
                         <Box display='flex' flexDirection='row' p='0.5rem 0'>
                             <Typography flexBasis='30%' variant='p' fontWeight='bold'>Date:</Typography>
-                            <Typography flexBasis='70%' variant='p'>Test</Typography>
+                            <Typography flexBasis='70%' variant='p'>{date}</Typography>
                         </Box>
                         <Box display='flex' flexDirection='row' p='0.5rem 0'>
                             <Typography flexBasis='30%' variant='p' fontWeight='bold'>Url:</Typography>
-                            <Typography flexBasis='70%' variant='p'>Test</Typography>
+                            <Typography flexBasis='70%' variant='p'>{url}</Typography>
                         </Box>
                         <Box display='flex' flexDirection='row' p='0.5rem 0'>
                             <Typography flexBasis='30%' variant='p' fontWeight='bold'>GitHub:</Typography>
-                            <Typography flexBasis='70%' variant='p'>Test</Typography>
+                            <Typography flexBasis='70%' variant='p'>{git}</Typography>
                         </Box>
                         </Box>
 

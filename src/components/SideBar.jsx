@@ -22,6 +22,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import FolderIcon from '@mui/icons-material/Folder';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import HomeIcon from '@mui/icons-material/Home';
+import SchoolIcon from '@mui/icons-material/School';
 
 
 function SideBar() {
@@ -30,13 +31,18 @@ function SideBar() {
 
   return (
     <List m='4rem 0'>
-        {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton href={`#${text}`}>
+        {['Home', 'About', 'Skills', 'Resume', 'Projects', 'Contact'].map((text, index) => (
+          <ListItem key={text} disablePadding >
+            <ListItemButton href={`#${text}`} sx={{
+                '&:hover': {
+                  color: '#d03bd8'
+                }
+              }}>
               <ListItemIcon>
                     {(text === 'Home') ? (<HomeIcon style={{ color: 'white' }}/>) : undefined}  
                     {(text === 'About') ? (<InfoIcon style={{ color: 'white' }}/>) : undefined}
                     {(text === 'Skills') ? (<CodeIcon style={{ color: 'white' }}/>) : undefined}
+                    {(text === 'Resume') ? (<SchoolIcon style={{ color: 'white' }}/>) : undefined}
                     {(text === 'Projects') ? (<FolderIcon style={{ color: 'white' }}/>) : undefined}
                     {(text === 'Contact') ? (<AlternateEmailIcon style={{ color: 'white' }}/>) : undefined}
                 

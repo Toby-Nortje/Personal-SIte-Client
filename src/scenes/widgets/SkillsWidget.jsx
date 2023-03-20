@@ -15,23 +15,9 @@ import { faDatabase, faB } from "@fortawesome/free-solid-svg-icons";
 
 
 const SkillsWidget = () => {
-    const isNonMobileScreens = useMediaQuery('(min-width: 800px)');
+    const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
 
-    const skills = [{
-        icon: 'Html',
-        name: 'test',
-        description: 'test'
-    },
-    {
-        icon: 'Css',
-        name: 'test',
-        description: 'test'
-    },
-    {
-        icon: 'Js',
-        name: 'test',
-        description: 'test'
-    }]
+
 
     return(
         <Box id='Skills' sx={{
@@ -53,13 +39,13 @@ const SkillsWidget = () => {
                 '&::after': {
                     position: 'absolute',
                     content: "''",
-                    height: '2px',
+                    height: '4px',
                     bottom: '-4px',
                     margin: '0 auto',
                     left: '0',
                     right: '0',
                     width: '50%',
-                    background: 'white',
+                    background: '#d03bd8',
                     transition: '.5s',
                 },
                 '&:hover::after': {
