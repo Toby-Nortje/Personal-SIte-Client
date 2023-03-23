@@ -16,24 +16,25 @@ import { faDatabase, faB } from "@fortawesome/free-solid-svg-icons";
 
 const SkillsWidget = () => {
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
+    const mediumScreens = useMediaQuery('(min-width: 600px)');
 
 
 
     return(
         <Box id='Skills' sx={{
             backgroundColor: '#666666',
-            p:'2rem'
+            p:'2%'
         }}>
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            m: '2rem',
-            p: '2rem'
+            m: '3%',
+            p: '3%'
           }}>
             <Box sx={{
                 alignSelf: 'center',
                 position: 'relative',
-                m: '3rem'
+                m: '5%'
             }}>
             <Typography variant="h2" sx={{
                 '&::after': {
@@ -67,7 +68,7 @@ const SkillsWidget = () => {
 
             <Box gap='1rem' sx={{
                 display: 'grid',
-                gridTemplateColumns: isNonMobileScreens ? '33% 33% 33%' : 'auto auto',
+                gridTemplateColumns: isNonMobileScreens ? '33% 33% 33%' : mediumScreens ? 'auto auto' : 'auto',
                 p: '1rem',
                 mt: '1rem'
             }}>

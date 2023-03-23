@@ -11,18 +11,18 @@ const AboutWidget = () => {
     return (
         <Box id='About' sx={{
             backgroundColor: '#333333',
-            p: '2rem'
+            p: '2%'
         }}>
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            m: '2rem',
-            p: '2rem'
+            m: '3%',
+            p: '3%'
           }}>
             <Box sx={{
                 alignSelf: 'center',
                 position: 'relative',
-                m: '3rem'
+                m: '5%'
             }}>
             <Typography variant="h2" sx={{
                 '&::after': {
@@ -43,7 +43,7 @@ const AboutWidget = () => {
             }}>About Me</Typography>
             </Box>
             <Box display={isNonMobileScreens ? 'flex' : 'block'}>
-                <Box flexBasis={isNonMobileScreens ? '70%' : undefined} p='1rem' >
+                <Box flexBasis={isNonMobileScreens ? '70%' : undefined} p='10px' >
                     <Typography variant='h5' mb='1rem'>I'm Toby Nortje, an aspiring Full-stack web developer</Typography>
                     <Typography >I've been an avid fan of tech and computers since I was a kid and would always
                                             try to find some new gadget to tinker with or some computer problem to solve. 
@@ -55,7 +55,7 @@ const AboutWidget = () => {
                     <Typography >I have since been learning Web development through sites like Udemy and through 
                                             my own personal projects.</Typography>
                     <br />
-                    <Typography >I am an expretemely dedicated learner spending all my time off from work to 
+                    <Typography >I am an extremely dedicated learner spending all my time off from work to 
                                             create my own personal website projects. I am hoping to get an internship at 
                                             a web development company to take my skills further an create a career for 
                                             myself within the industry.</Typography>

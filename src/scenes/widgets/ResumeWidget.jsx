@@ -10,18 +10,18 @@ const ResumeWidget = () => {
     return(
         <Box id='Resume' sx={{
             backgroundColor: '#333333',
-            p: '2rem'
+            p: '2%'
         }}>
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            m: '2rem',
-            p: '2rem'
+            m: '3%',
+            p: '3%'
           }}>
             <Box sx={{
                 alignSelf: 'center',
                 position: 'relative',
-                m: '3rem'
+                m: '5%'
             }}>
             <Typography variant="h2" sx={{
                 '&::after': {
@@ -151,6 +151,9 @@ const ResumeWidget = () => {
                         }}>Currently Employed</Box>
                         <Typography variant='h5'>Sales Assistant</Typography>
                         <Typography fontSize='18px' color='#d03bd8'>Parow Family Pharmacy</Typography>
+                        <Typography variant='body1' >Duties included, working the cash registers, helping customers by 
+                        directing customers to specific products. Helping diagnose customers when possible and directing them to the 
+                        appropraite products.</Typography>
                     </Box>
                     
                 </Box>

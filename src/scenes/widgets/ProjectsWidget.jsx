@@ -11,18 +11,18 @@ const ProjectsWidget = () => {
     return(
         <Box id='Projects' sx={{
             backgroundColor: '#666666',
-            p: '2rem'
+            p: '2%'
         }}>
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            m: '2rem',
-            p: '2rem'
+            m: '3%',
+            p: '3%'
           }}>
             <Box sx={{
                 alignSelf: 'center',
                 position: 'relative',
-                m: '3rem'
+                m: '5% 0'
             }}>
             <Typography variant="h2" sx={{
                 '&::after': {

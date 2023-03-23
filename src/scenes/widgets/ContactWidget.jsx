@@ -1,11 +1,14 @@
 import { 
     Box,
-    Typography 
+    Typography,
+    useMediaQuery 
 } from "@mui/material";
 import { useState } from 'react';
 import { send } from 'emailjs-com';
 
 const ContactWidget = () => {
+    const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
+
     const [toSend, setToSend] = useState({
         from_name: '',
         to_name: 'Toby Nortje',
@@ -26,7 +29,13 @@ const ContactWidget = () => {
         })
         .catch((err) => {
             console.log('FAILED...', err)
-        })
+        });
+        setToSend({
+            from_name: '',
+            to_name: 'Toby Nortje',
+            message: '',
+            reply_to: ''
+        });
     };
     
     const handleChange = (e) => {
@@ -36,18 +45,18 @@ const ContactWidget = () => {
     return(
         <Box id='Contact' sx={{
             backgroundColor: '#333333',
-            p: '2rem'
+            p: '2%'
         }}>
           <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            m: '2rem',
-            p: '2rem'
+            m: '3%',
+            p: '3%'
           }}>
             <Box sx={{
                 alignSelf: 'center',
                 position: 'relative',
-                m: '3rem'
+                m: '5%'
             }}>
             <Typography variant="h2" sx={{
                 '&::after': {
@@ -69,7 +78,7 @@ const ContactWidget = () => {
             </Box>
             <Box sx={{
                 display: 'flex',
-                
+                flexDirection: isNonMobileScreens ? 'row' : 'column'
             }}>
               <Box flexBasis='30%' display='flex' sx={{
                 justifyContent: 'center',
@@ -86,22 +95,23 @@ const ContactWidget = () => {
                     <Typography variant='h6'>Send me a message</Typography>
                     <Box display='flex' sx={{
                         flexDirection: 'column',
-                        alignItems: 'stretch'
+                        
                     }}>
-                    <Box display='flex' p='0.5rem' gap='2rem'>
+                    <Box display='flex' p='2%' gap='2%'>
                         <input  name='from_name' type='text' required placeholder='Name' value={toSend.from_name} onChange={handleChange} style={{
-                            flexBasis: '50%',
+                            width: '100%',
                             backgroundColor: '#474747',
                             borderRadius: '8px',
                             border: 'none',
-                            p: '2rem'
+                            padding: '10px'
                         }}/>
                     
                         <input  name='reply_to' type='email' required placeholder='Email' value={toSend.reply_to} onChange={handleChange} style={{
-                            flexBasis: '50%',
+                            width: '100%',
                             backgroundColor: '#474747',
                             borderRadius: '8px',
-                            border: 'none'
+                            border: 'none',
+                            padding: '10px'
                         }}/>
                     </Box>
                     <Box display='flex' p='0.5rem'>    
@@ -109,7 +119,8 @@ const ContactWidget = () => {
                             width: '100%',
                             backgroundColor: '#474747',
                             borderRadius: '8px',
-                            border: 'none'
+                            border: 'none',
+                            padding: '10px'
                         }}></textarea></Box>
                     </Box> 
                     <Box display='flex' justifyContent='center' m='2rem'><button className='btn' type='submit'>Send Message</button></Box>

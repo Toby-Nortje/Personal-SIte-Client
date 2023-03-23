@@ -19,7 +19,7 @@ const HomePage = () => {
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
     
     return (
-        <Box sx={{ display: 'flex', height: '100vh',}}>
+        <Box sx={{ display: isNonMobileScreens ? 'flex' : undefined, height: '100vh',}}>
           {isNonMobileScreens ? (
             <Box sx={{ 
             flexBasis: '15%',
